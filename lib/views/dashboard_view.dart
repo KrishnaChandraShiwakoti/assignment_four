@@ -1,3 +1,5 @@
+import 'package:assignment_four/views/employee_view.dart';
+import 'package:assignment_four/views/image_grid_view.dart';
 import 'package:flutter/material.dart';
 
 class DashboardView extends StatelessWidget {
@@ -11,7 +13,10 @@ class DashboardView extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [Colors.deepPurple.shade400, Colors.deepPurple.shade800],
+            colors: [
+              const Color.fromARGB(255, 190, 87, 194),
+              const Color.fromARGB(255, 84, 9, 42),
+            ],
           ),
         ),
         child: SafeArea(
@@ -50,18 +55,18 @@ class DashboardView extends StatelessWidget {
                           colors: [Colors.blue.shade400, Colors.blue.shade600],
                         ),
                         onTap: () {
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //     builder: (context) => const ListViewScreen(),
-                          //   ),
-                          // );
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => EmployeeView(),
+                            ),
+                          );
                         },
                       ),
                       const SizedBox(height: 20),
                       _buildDashboardCard(
                         context,
-                        title: 'GridView',
+                        title: 'ImageGridView',
                         subtitle: '3*3 matrix image ',
                         icon: Icons.grid_view_rounded,
                         gradient: LinearGradient(
@@ -71,12 +76,12 @@ class DashboardView extends StatelessWidget {
                           ],
                         ),
                         onTap: () {
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //     builder: (context) => const GridViewScreen(),
-                          //   ),
-                          // );
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ImageGridView(),
+                            ),
+                          );
                         },
                       ),
                     ],
